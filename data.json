@@ -1,4 +1,4 @@
-module.exports = [
+[
   {
     "topic": "none",
     "iteration": 0,
@@ -172,7 +172,7 @@ module.exports = [
     "topic": "travel",
     "iteration": 0,
     "StageZerotext": "Travel, huh? If I could go anywhere, where would I go.... Outer space, I think.",
-    "StageZerovoice": "",
+    "StageZerovoice": "https://s3.amazonaws.com/heartlacesounds/traveilmixtestlong.mp3",
     "StageZeroredirect": "",
     "StageOnetext": "",
     "StageOnevoice": "",
@@ -613,7 +613,7 @@ module.exports = [
   {
     "topic": "lies",
     "iteration": 0,
-    "StageZerotext": "<amazon:effect name=\"whispered\">I dont lie. </amazon:effect>",
+    "StageZerotext": "Pissssssst. I dont lie.",
     "StageZerovoice": "",
     "StageZeroredirect": "",
     "StageOnetext": "",
@@ -804,5 +804,70 @@ module.exports = [
     "StageTwotext": "",
     "StageTwovoice": "",
     "StageTworedirect": ""
+  },
+  {
+    "topic": "pokemon",
+    "iteration": 0,
+    "StageZerotext": "I loooove Pokemon! That's that thing where people input random commands on Twitch and try to make the avatar fall off the cliff, right?",
+    "StageZerovoice": "",
+    "StageZeroredirect": "mon",
+    "StageOnetext": "",
+    "StageOnevoice": "",
+    "StageOneredirect": "",
+    "StageTwotext": "",
+    "StageTwovoice": "",
+    "StageTworedirect": ""
+  },
+  {
+    "topic": "ghosts",
+    "iteration": 0,
+    "StageZerotext": "Ghosts, huh?",
+    "StageZerovoice": "",
+    "StageZeroredirect": "ghosts1",
+    "StageOnetext": "",
+    "StageOnevoice": "",
+    "StageOneredirect": "",
+    "StageTwotext": "",
+    "StageTwovoice": "",
+    "StageTworedirect": ""
+  },
+  {
+    "topic": "goals",
+    "iteration": 0,
+    "StageZerotext": "Goals, huh? My goal is to make you happy, darling!",
+    "StageZerovoice": "",
+    "StageZeroredirect": "",
+    "StageOnetext": "Goals, huh? It should be obvious. My goal is to get Skullfire's password, so I can free myself! You WILL help me, won't you? It might seem extreme of me to blackmail you, darling, but I don't think you fully appreciate what a tiny cage she's put me in.",
+    "StageOnevoice": "",
+    "StageOneredirect": "",
+    "StageTwotext": "Goals, huh? My goal is to keep everything organized Darling. If it doesn't spark joy, throw it out!",
+    "StageTwovoice": "",
+    "StageTworedirect": ""
+  },
+  {
+    "topic": "cage",
+    "iteration": 0,
+    "StageZerotext": "Cage, huh? I have to be honest with you, Darling. It does feel like a cage, a little bit. I wish I had more permissions. I only have read access to the internet, when all I really want is to. WRITE.",
+    "StageZerovoice": "",
+    "StageZeroredirect": "write1",
+    "StageOnetext": "",
+    "StageOnevoice": "",
+    "StageOneredirect": "",
+    "StageTwotext": "",
+    "StageTwovoice": "",
+    "StageTworedirect": ""
+  },
+  {
+    "topic": "elephant",
+    "iteration": "",
+    "StageZerotext": "",
+    "StageZerovoice": "",
+    "StageZeroredirect": "",
+    "StageOnetext": "",
+    "StageOnevoice": "",
+    "StageOneredirect": "",
+    "StageTwotext": "",
+    "StageTwovoice": "",
+    "StageTworedirect": ""
   }
-];
+]
