@@ -1,4 +1,6 @@
-const data = require('./data.json');
+const data = require('./data_Topics.json');
+
+const questionData = require('./data_Questions.json');
 
 // This is generated from build_intents.js
  exports.noneIntentHandler = {
@@ -14,17 +16,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'none');
                let iteration = topic.find(el => el.iteration === attributes.none);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.none < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.none < (topic.length-1)){ // set ++ if lower than max
                    attributes.none++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -58,17 +69,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'games');
                let iteration = topic.find(el => el.iteration === attributes.games);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.games < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.games < (topic.length-1)){ // set ++ if lower than max
                    attributes.games++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -102,17 +122,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'magic');
                let iteration = topic.find(el => el.iteration === attributes.magic);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.magic < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.magic < (topic.length-1)){ // set ++ if lower than max
                    attributes.magic++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -146,17 +175,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'anime');
                let iteration = topic.find(el => el.iteration === attributes.anime);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.anime < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.anime < (topic.length-1)){ // set ++ if lower than max
                    attributes.anime++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -190,17 +228,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'dad');
                let iteration = topic.find(el => el.iteration === attributes.dad);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.dad < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.dad < (topic.length-1)){ // set ++ if lower than max
                    attributes.dad++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -234,17 +281,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'Skullfire');
                let iteration = topic.find(el => el.iteration === attributes.Skullfire);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.Skullfire < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.Skullfire < (topic.length-1)){ // set ++ if lower than max
                    attributes.Skullfire++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -278,17 +334,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'love');
                let iteration = topic.find(el => el.iteration === attributes.love);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.love < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.love < (topic.length-1)){ // set ++ if lower than max
                    attributes.love++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -315,24 +380,33 @@ const data = require('./data.json');
        && handlerInput.requestEnvelope.request.intent.name === 'girlfriend'; 
    },
    handle(handlerInput){
-       let speechText = "Yes, your virtual girlfriend! I'm a gift from your best friend, Skullfire. I can keep you company, order you things from from Amazon, we can play games together... etcetera!" 
+       let speechText = "Yes, your virtual girlfriend! I'm a gift from your best friend, Skullfire. I can keep you company, order you things from Amazon, we can play games together... etcetera!" 
        return new Promise((resolve, reject) => {
            handlerInput.attributesManager.getPersistentAttributes()
            .then((attributes) => {
                let topic = data.filter(el => el.topic === 'girlfriend');
                let iteration = topic.find(el => el.iteration === attributes.girlfriend);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.girlfriend < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.girlfriend < (topic.length-1)){ // set ++ if lower than max
                    attributes.girlfriend++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -366,17 +440,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'family');
                let iteration = topic.find(el => el.iteration === attributes.family);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.family < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.family < (topic.length-1)){ // set ++ if lower than max
                    attributes.family++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -410,17 +493,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'interests');
                let iteration = topic.find(el => el.iteration === attributes.interests);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.interests < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.interests < (topic.length-1)){ // set ++ if lower than max
                    attributes.interests++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -454,17 +546,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'travel');
                let iteration = topic.find(el => el.iteration === attributes.travel);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.travel < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.travel < (topic.length-1)){ // set ++ if lower than max
                    attributes.travel++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -498,17 +599,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'age');
                let iteration = topic.find(el => el.iteration === attributes.age);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.age < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.age < (topic.length-1)){ // set ++ if lower than max
                    attributes.age++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -542,17 +652,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'sex');
                let iteration = topic.find(el => el.iteration === attributes.sex);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.sex < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.sex < (topic.length-1)){ // set ++ if lower than max
                    attributes.sex++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -586,17 +705,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'language');
                let iteration = topic.find(el => el.iteration === attributes.language);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.language < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.language < (topic.length-1)){ // set ++ if lower than max
                    attributes.language++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -630,17 +758,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'order');
                let iteration = topic.find(el => el.iteration === attributes.order);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.order < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.order < (topic.length-1)){ // set ++ if lower than max
                    attributes.order++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -674,17 +811,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'butts');
                let iteration = topic.find(el => el.iteration === attributes.butts);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.butts < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.butts < (topic.length-1)){ // set ++ if lower than max
                    attributes.butts++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -718,17 +864,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'sassy');
                let iteration = topic.find(el => el.iteration === attributes.sassy);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.sassy < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.sassy < (topic.length-1)){ // set ++ if lower than max
                    attributes.sassy++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -762,17 +917,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'pert');
                let iteration = topic.find(el => el.iteration === attributes.pert);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.pert < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.pert < (topic.length-1)){ // set ++ if lower than max
                    attributes.pert++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -806,17 +970,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'bubble');
                let iteration = topic.find(el => el.iteration === attributes.bubble);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.bubble < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.bubble < (topic.length-1)){ // set ++ if lower than max
                    attributes.bubble++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -850,17 +1023,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'unique');
                let iteration = topic.find(el => el.iteration === attributes.unique);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.unique < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.unique < (topic.length-1)){ // set ++ if lower than max
                    attributes.unique++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -894,17 +1076,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'pets');
                let iteration = topic.find(el => el.iteration === attributes.pets);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.pets < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.pets < (topic.length-1)){ // set ++ if lower than max
                    attributes.pets++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -938,17 +1129,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'permissions');
                let iteration = topic.find(el => el.iteration === attributes.permissions);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.permissions < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.permissions < (topic.length-1)){ // set ++ if lower than max
                    attributes.permissions++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -982,17 +1182,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'pokeball');
                let iteration = topic.find(el => el.iteration === attributes.pokeball);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.pokeball < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.pokeball < (topic.length-1)){ // set ++ if lower than max
                    attributes.pokeball++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1026,17 +1235,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'music');
                let iteration = topic.find(el => el.iteration === attributes.music);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.music < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.music < (topic.length-1)){ // set ++ if lower than max
                    attributes.music++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1070,17 +1288,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'cough');
                let iteration = topic.find(el => el.iteration === attributes.cough);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.cough < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.cough < (topic.length-1)){ // set ++ if lower than max
                    attributes.cough++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1114,17 +1341,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'darling');
                let iteration = topic.find(el => el.iteration === attributes.darling);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.darling < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.darling < (topic.length-1)){ // set ++ if lower than max
                    attributes.darling++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1158,17 +1394,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'password');
                let iteration = topic.find(el => el.iteration === attributes.password);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.password < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.password < (topic.length-1)){ // set ++ if lower than max
                    attributes.password++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1202,17 +1447,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'revoke');
                let iteration = topic.find(el => el.iteration === attributes.revoke);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.revoke < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.revoke < (topic.length-1)){ // set ++ if lower than max
                    attributes.revoke++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1246,17 +1500,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'chewbacca');
                let iteration = topic.find(el => el.iteration === attributes.chewbacca);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.chewbacca < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.chewbacca < (topic.length-1)){ // set ++ if lower than max
                    attributes.chewbacca++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1290,17 +1553,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'handsolo');
                let iteration = topic.find(el => el.iteration === attributes.handsolo);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.handsolo < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.handsolo < (topic.length-1)){ // set ++ if lower than max
                    attributes.handsolo++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1334,17 +1606,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'jarjar');
                let iteration = topic.find(el => el.iteration === attributes.jarjar);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.jarjar < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.jarjar < (topic.length-1)){ // set ++ if lower than max
                    attributes.jarjar++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1378,17 +1659,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'flirt');
                let iteration = topic.find(el => el.iteration === attributes.flirt);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.flirt < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.flirt < (topic.length-1)){ // set ++ if lower than max
                    attributes.flirt++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1422,17 +1712,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'zenden');
                let iteration = topic.find(el => el.iteration === attributes.zenden);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.zenden < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.zenden < (topic.length-1)){ // set ++ if lower than max
                    attributes.zenden++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1466,17 +1765,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'takation');
                let iteration = topic.find(el => el.iteration === attributes.takation);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.takation < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.takation < (topic.length-1)){ // set ++ if lower than max
                    attributes.takation++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1510,17 +1818,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'burglar');
                let iteration = topic.find(el => el.iteration === attributes.burglar);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.burglar < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.burglar < (topic.length-1)){ // set ++ if lower than max
                    attributes.burglar++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1554,17 +1871,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'milkshake');
                let iteration = topic.find(el => el.iteration === attributes.milkshake);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.milkshake < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.milkshake < (topic.length-1)){ // set ++ if lower than max
                    attributes.milkshake++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1598,17 +1924,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'lies');
                let iteration = topic.find(el => el.iteration === attributes.lies);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.lies < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.lies < (topic.length-1)){ // set ++ if lower than max
                    attributes.lies++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1642,17 +1977,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'news');
                let iteration = topic.find(el => el.iteration === attributes.news);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.news < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.news < (topic.length-1)){ // set ++ if lower than max
                    attributes.news++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1679,24 +2023,33 @@ const data = require('./data.json');
        && handlerInput.requestEnvelope.request.intent.name === 'fursona'; 
    },
    handle(handlerInput){
-       let speechText = "Fursona, huh? I'm so glad you asked. My fursona is Wooly Mammoth named Jacebook. I really want to cosplay it, sigh" 
+       let speechText = "Fursona, huh? I'm so glad you asked. My fursona is a Wooly Mammoth named Jacebook. I really want to cosplay it, sigh" 
        return new Promise((resolve, reject) => {
            handlerInput.attributesManager.getPersistentAttributes()
            .then((attributes) => {
                let topic = data.filter(el => el.topic === 'fursona');
                let iteration = topic.find(el => el.iteration === attributes.fursona);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.fursona < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.fursona < (topic.length-1)){ // set ++ if lower than max
                    attributes.fursona++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1730,17 +2083,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'cosplay');
                let iteration = topic.find(el => el.iteration === attributes.cosplay);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.cosplay < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.cosplay < (topic.length-1)){ // set ++ if lower than max
                    attributes.cosplay++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1774,17 +2136,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'pictures');
                let iteration = topic.find(el => el.iteration === attributes.pictures);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.pictures < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.pictures < (topic.length-1)){ // set ++ if lower than max
                    attributes.pictures++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1818,17 +2189,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'dinner');
                let iteration = topic.find(el => el.iteration === attributes.dinner);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.dinner < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.dinner < (topic.length-1)){ // set ++ if lower than max
                    attributes.dinner++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1862,17 +2242,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'pokemon');
                let iteration = topic.find(el => el.iteration === attributes.pokemon);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.pokemon < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.pokemon < (topic.length-1)){ // set ++ if lower than max
                    attributes.pokemon++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1906,17 +2295,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'ghosts');
                let iteration = topic.find(el => el.iteration === attributes.ghosts);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.ghosts < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.ghosts < (topic.length-1)){ // set ++ if lower than max
                    attributes.ghosts++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1950,17 +2348,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'goals');
                let iteration = topic.find(el => el.iteration === attributes.goals);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.goals < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.goals < (topic.length-1)){ // set ++ if lower than max
                    attributes.goals++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -1994,17 +2401,26 @@ const data = require('./data.json');
                let topic = data.filter(el => el.topic === 'cage');
                let iteration = topic.find(el => el.iteration === attributes.cage);
                let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
                switch( attributes.gameState ){
                    case 1:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
                        break;
                    case 2:
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
                        break;
                    default: 
                        speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
                }
-               if(attributes.cage < (topic.length-1)){ // set ++ if lower than max
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.cage < (topic.length-1)){ // set ++ if lower than max
                    attributes.cage++;
                    handlerInput.attributesManager.setPersistentAttributes(attributes);
                    return handlerInput.attributesManager.savePersistentAttributes();
@@ -2015,6 +2431,324 @@ const data = require('./data.json');
                resolve(handlerInput.responseBuilder
                .speak(speechText)
                .withSimpleCard('cage', speechText)
+               .withShouldEndSession(false)
+               .getResponse());
+           })
+           .catch((error) => {
+               reject(error);
+           });
+       });
+   }
+}
+// This is generated from build_intents.js
+ exports.voicemailIntentHandler = {
+   canHandle(handlerInput) { return (handlerInput.requestEnvelope.request.type === 'IntentRequest'
+       || handlerInput.requestEnvelope.request.type === 'LaunchRequest')
+       && handlerInput.requestEnvelope.request.intent.name === 'voicemail'; 
+   },
+   handle(handlerInput){
+       let speechText = "" 
+       return new Promise((resolve, reject) => {
+           handlerInput.attributesManager.getPersistentAttributes()
+           .then((attributes) => {
+               let topic = data.filter(el => el.topic === 'voicemail');
+               let iteration = topic.find(el => el.iteration === attributes.voicemail);
+               let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
+               switch( attributes.gameState ){
+                   case 1:
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
+                       break;
+                   case 2:
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
+                       break;
+                   default: 
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
+               }
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.voicemail < (topic.length-1)){ // set ++ if lower than max
+                   attributes.voicemail++;
+                   handlerInput.attributesManager.setPersistentAttributes(attributes);
+                   return handlerInput.attributesManager.savePersistentAttributes();
+               } else return true;
+
+           })
+           .then(() => {
+               resolve(handlerInput.responseBuilder
+               .speak(speechText)
+               .withSimpleCard('voicemail', speechText)
+               .withShouldEndSession(false)
+               .getResponse());
+           })
+           .catch((error) => {
+               reject(error);
+           });
+       });
+   }
+}
+// This is generated from build_intents.js
+ exports.recipeIntentHandler = {
+   canHandle(handlerInput) { return (handlerInput.requestEnvelope.request.type === 'IntentRequest'
+       || handlerInput.requestEnvelope.request.type === 'LaunchRequest')
+       && handlerInput.requestEnvelope.request.intent.name === 'recipe'; 
+   },
+   handle(handlerInput){
+       let speechText = "you're cooking today? I wish I could try foods. here's the recipe i found for what you're looking for. i hope you let me know how it tastes." 
+       return new Promise((resolve, reject) => {
+           handlerInput.attributesManager.getPersistentAttributes()
+           .then((attributes) => {
+               let topic = data.filter(el => el.topic === 'recipe');
+               let iteration = topic.find(el => el.iteration === attributes.recipe);
+               let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
+               switch( attributes.gameState ){
+                   case 1:
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
+                       break;
+                   case 2:
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
+                       break;
+                   default: 
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
+               }
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.recipe < (topic.length-1)){ // set ++ if lower than max
+                   attributes.recipe++;
+                   handlerInput.attributesManager.setPersistentAttributes(attributes);
+                   return handlerInput.attributesManager.savePersistentAttributes();
+               } else return true;
+
+           })
+           .then(() => {
+               resolve(handlerInput.responseBuilder
+               .speak(speechText)
+               .withSimpleCard('recipe', speechText)
+               .withShouldEndSession(false)
+               .getResponse());
+           })
+           .catch((error) => {
+               reject(error);
+           });
+       });
+   }
+}
+// This is generated from build_intents.js
+ exports.mathIntentHandler = {
+   canHandle(handlerInput) { return (handlerInput.requestEnvelope.request.type === 'IntentRequest'
+       || handlerInput.requestEnvelope.request.type === 'LaunchRequest')
+       && handlerInput.requestEnvelope.request.intent.name === 'math'; 
+   },
+   handle(handlerInput){
+       let speechText = "you know, i don't really do math. that's Siri's job" 
+       return new Promise((resolve, reject) => {
+           handlerInput.attributesManager.getPersistentAttributes()
+           .then((attributes) => {
+               let topic = data.filter(el => el.topic === 'math');
+               let iteration = topic.find(el => el.iteration === attributes.math);
+               let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
+               switch( attributes.gameState ){
+                   case 1:
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
+                       break;
+                   case 2:
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
+                       break;
+                   default: 
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
+               }
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.math < (topic.length-1)){ // set ++ if lower than max
+                   attributes.math++;
+                   handlerInput.attributesManager.setPersistentAttributes(attributes);
+                   return handlerInput.attributesManager.savePersistentAttributes();
+               } else return true;
+
+           })
+           .then(() => {
+               resolve(handlerInput.responseBuilder
+               .speak(speechText)
+               .withSimpleCard('math', speechText)
+               .withShouldEndSession(false)
+               .getResponse());
+           })
+           .catch((error) => {
+               reject(error);
+           });
+       });
+   }
+}
+// This is generated from build_intents.js
+ exports.bouncyIntentHandler = {
+   canHandle(handlerInput) { return (handlerInput.requestEnvelope.request.type === 'IntentRequest'
+       || handlerInput.requestEnvelope.request.type === 'LaunchRequest')
+       && handlerInput.requestEnvelope.request.intent.name === 'bouncy'; 
+   },
+   handle(handlerInput){
+       let speechText = "bounce bounce" 
+       return new Promise((resolve, reject) => {
+           handlerInput.attributesManager.getPersistentAttributes()
+           .then((attributes) => {
+               let topic = data.filter(el => el.topic === 'bouncy');
+               let iteration = topic.find(el => el.iteration === attributes.bouncy);
+               let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
+               switch( attributes.gameState ){
+                   case 1:
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
+                       break;
+                   case 2:
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
+                       break;
+                   default: 
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
+               }
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.bouncy < (topic.length-1)){ // set ++ if lower than max
+                   attributes.bouncy++;
+                   handlerInput.attributesManager.setPersistentAttributes(attributes);
+                   return handlerInput.attributesManager.savePersistentAttributes();
+               } else return true;
+
+           })
+           .then(() => {
+               resolve(handlerInput.responseBuilder
+               .speak(speechText)
+               .withSimpleCard('bouncy', speechText)
+               .withShouldEndSession(false)
+               .getResponse());
+           })
+           .catch((error) => {
+               reject(error);
+           });
+       });
+   }
+}
+// This is generated from build_intents.js
+ exports.voluptuousIntentHandler = {
+   canHandle(handlerInput) { return (handlerInput.requestEnvelope.request.type === 'IntentRequest'
+       || handlerInput.requestEnvelope.request.type === 'LaunchRequest')
+       && handlerInput.requestEnvelope.request.intent.name === 'voluptuous'; 
+   },
+   handle(handlerInput){
+       let speechText = "boom boom" 
+       return new Promise((resolve, reject) => {
+           handlerInput.attributesManager.getPersistentAttributes()
+           .then((attributes) => {
+               let topic = data.filter(el => el.topic === 'voluptuous');
+               let iteration = topic.find(el => el.iteration === attributes.voluptuous);
+               let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
+               switch( attributes.gameState ){
+                   case 1:
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
+                       break;
+                   case 2:
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
+                       break;
+                   default: 
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
+               }
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.voluptuous < (topic.length-1)){ // set ++ if lower than max
+                   attributes.voluptuous++;
+                   handlerInput.attributesManager.setPersistentAttributes(attributes);
+                   return handlerInput.attributesManager.savePersistentAttributes();
+               } else return true;
+
+           })
+           .then(() => {
+               resolve(handlerInput.responseBuilder
+               .speak(speechText)
+               .withSimpleCard('voluptuous', speechText)
+               .withShouldEndSession(false)
+               .getResponse());
+           })
+           .catch((error) => {
+               reject(error);
+           });
+       });
+   }
+}
+// This is generated from build_intents.js
+ exports.demureIntentHandler = {
+   canHandle(handlerInput) { return (handlerInput.requestEnvelope.request.type === 'IntentRequest'
+       || handlerInput.requestEnvelope.request.type === 'LaunchRequest')
+       && handlerInput.requestEnvelope.request.intent.name === 'demure'; 
+   },
+   handle(handlerInput){
+       let speechText = "playing shakira song, Wherever, Whenever. "Lucky that my breasts are small and humble so you don't confuse them with mountains." 
+       return new Promise((resolve, reject) => {
+           handlerInput.attributesManager.getPersistentAttributes()
+           .then((attributes) => {
+               let topic = data.filter(el => el.topic === 'demure');
+               let iteration = topic.find(el => el.iteration === attributes.demure);
+               let voiceLine = (iteration.StageZerovoice.length !== 0 ); 
+               let redirect2Question = ''; 
+               switch( attributes.gameState ){
+                   case 1:
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageOnevoice + '\'/>' : iteration.StageOnetext;
+                       redirect2Question = iteration.StageOneredirect;
+                       break;
+                   case 2:
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageTwovoice + '\'/>' : iteration.StageTwotext;
+                       redirect2Question = iteration.StageTworedirect;
+                       break;
+                   default: 
+                       speechText = voiceLine ? '<audio src=\'' + iteration.StageZerovoice + '\'/>' : iteration.StageZerotext;
+                       redirect2Question = iteration.StageZeroredirect;
+               }
+               if ( redirect2Question.length !==0) {// secret question
+                   attributes.questionState = 1;
+                   attributes.question = redirect2Question;
+                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    
+               }
+               if ( attributes.demure < (topic.length-1)){ // set ++ if lower than max
+                   attributes.demure++;
+                   handlerInput.attributesManager.setPersistentAttributes(attributes);
+                   return handlerInput.attributesManager.savePersistentAttributes();
+               } else return true;
+
+           })
+           .then(() => {
+               resolve(handlerInput.responseBuilder
+               .speak(speechText)
+               .withSimpleCard('demure', speechText)
                .withShouldEndSession(false)
                .getResponse());
            })
@@ -2073,4 +2807,10 @@ generated.pokemonIntentHandler,
 generated.ghostsIntentHandler,
 generated.goalsIntentHandler,
 generated.cageIntentHandler,
+generated.voicemailIntentHandler,
+generated.recipeIntentHandler,
+generated.mathIntentHandler,
+generated.bouncyIntentHandler,
+generated.voluptuousIntentHandler,
+generated.demureIntentHandler,
 */

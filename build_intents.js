@@ -1,4 +1,4 @@
-const data = require('./data.json');
+const data = require('./data_Topics.json');
 const ask = require('ask-sdk-core');
 
 var fs = require('fs');
@@ -12,7 +12,8 @@ console.log = function(d) { //
 };
 
 // console.log("module.exports = [")
-console.log("const data = require('./data.json');\n\n");
+console.log("const data = require('./data_Topics.json');\n\n");
+console.log("const questionData = require('./data_Questions.json');\n\n");
 
 
 // Main Intent code generator
@@ -34,22 +35,31 @@ data.filter(el => el.iteration === 0).forEach( (element,index) => {
         "               let topic = data.filter(el => el.topic === '"+ element.topic +"');\n" +
         "               let iteration = topic.find(el => el.iteration === attributes."+ element.topic +");\n" +
         "               let voiceLine = (iteration.StageZerovoice.length !== 0 ); \n" + 
+        "               let redirect2Question = ''; \n" + 
         "               switch( attributes.gameState ){\n" +
         "                   case 1:\n" +
         "                       speechText = voiceLine ? '<audio src=\\'' + iteration.StageOnevoice + '\\'/>' : iteration.StageOnetext;\n" +
+        "                       redirect2Question = iteration.StageOneredirect;\n" +
         "                       break;\n" +
         "                   case 2:\n" +
         "                       speechText = voiceLine ? '<audio src=\\'' + iteration.StageTwovoice + '\\'/>' : iteration.StageTwotext;\n" +
+        "                       redirect2Question = iteration.StageTworedirect;\n" +
         "                       break;\n" +
         "                   default: \n" +
         "                       speechText = voiceLine ? '<audio src=\\'' + iteration.StageZerovoice + '\\'/>' : iteration.StageZerotext;\n" +
+        "                       redirect2Question = iteration.StageZeroredirect;\n" +
         "               }\n" +
-        "               if(attributes."+ element.topic +" < (topic.length-1)){ // set ++ if lower than max\n" +
+        "               if ( redirect2Question.length !==0) {// secret question\n" +
+        "                   attributes.questionState = 1;\n" +
+        "                   attributes.question = redirect2Question;\n" +
+        "                   speechText += questionData.find(el => el['q-id'] === redirect2Question)['q-text'];    \n" +
+        "               }\n" +
+        "               if ( attributes."+ element.topic +" < (topic.length-1)){ // set ++ if lower than max\n" +
         "                   attributes."+ element.topic +"++;\n" +
         "                   handlerInput.attributesManager.setPersistentAttributes(attributes);\n" +
         "                   return handlerInput.attributesManager.savePersistentAttributes();\n" +
         "               } else return true;\n" +
-        "\n"+
+        "\n" +
         "           })\n" +
         "           .then(() => {\n" +
         "               resolve(handlerInput.responseBuilder\n" +
@@ -69,7 +79,7 @@ data.filter(el => el.iteration === 0).forEach( (element,index) => {
     // else console.log("\n");
 });
 
-console.log("/*\n "+
+console.log("/*\n " +
     "   Copy these handlers to the addRequestHandlers method in index.js \n\n" );
     //"exports.addRequestHandlers = this.addRequestHandlers(")
 data.filter(el => el.iteration === 0).forEach((element, index) => {

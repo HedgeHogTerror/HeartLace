@@ -3,9 +3,11 @@ const { DynamoDbPersistenceAdapter } = require('ask-sdk-dynamodb-persistence-ada
 
 const dynamoDbPersistenceAdapter = new DynamoDbPersistenceAdapter({ tableName : 'HeartlaceUserTable', 
     createTable: true });
-const data = require('./data.json');
+const data = require('./data_Topics.json');
+const questionData = require('./data_Questions.json');
+
 const generated = require('./built_intents.js');
-//import { * } from 'built_intents';
+
 //Required intents
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -28,6 +30,8 @@ const LaunchRequestHandler = {
                 handlerInput.attributesManager.setPersistentAttributes(attributes);
                 return handlerInput.attributesManager.savePersistentAttributes();
             }
+            attributes.questionState = 0;
+            attributes.question = "";
           })
           .then(() => {
             resolve(handlerInput.responseBuilder
@@ -123,6 +127,7 @@ const ErrorHandler = {
 // custom intents
 //
 
+//reset Dynamo DB persistence
 const resetDBIntentHandler = {
     canHandle(handlerInput) {
         return ( handlerInput.requestEnvelope.request.type === 'IntentRequest'
@@ -130,14 +135,17 @@ const resetDBIntentHandler = {
         && handlerInput.requestEnvelope.request.intent.name === 'database';
     },
     handle(handlerInput) {
-
         return new Promise((resolve, reject) => {
             handlerInput.attributesManager.getPersistentAttributes()
               .then((attributes) => {
                 data.forEach(element => {
                     attributes[element.topic] = 0;
                 });
+
                 attributes.gameState = 0;
+                attributes.questionState = 0;
+                attributes.question = "";
+
                 handlerInput.attributesManager.setPersistentAttributes(attributes);
                 return handlerInput.attributesManager.savePersistentAttributes();
               })
@@ -145,6 +153,86 @@ const resetDBIntentHandler = {
                 resolve(handlerInput.responseBuilder
                 .speak("database reset")
                 .withSimpleCard('db reset', "database reset")
+                .withShouldEndSession(true)
+                .getResponse());
+              })
+              .catch((error) => {
+                reject(error);
+              });
+          });
+    }
+}
+
+const YesIntentHandler = {
+    canHandle(handlerInput) {
+        return new Promise((resolve, reject) => {
+            handlerInput.attributesManager.getPersistentAttributes()
+            .then((attributes) => {
+                resolve( ( handlerInput.requestEnvelope.request.type === 'IntentRequest'
+                || handlerInput.requestEnvelope.request.type === 'LaunchRequest' )
+                && handlerInput.requestEnvelope.request.intent.name === 'yes'
+                && attributes.questionState === 1);
+            })
+            .catch((error) => {
+                reject(error);
+            });
+        });
+    },
+    handle(handlerInput) {
+        return new Promise((resolve, reject) => {
+            let speakText = "yes";
+            handlerInput.attributesManager.getPersistentAttributes()
+              .then((attributes) => {
+                speakText = questionData.find(el => el['q-id'] === attributes.question)['q-text'];
+                attributes.questionState = 0;
+                attributes.question = "";
+                handlerInput.attributesManager.setPersistentAttributes(attributes);
+                return handlerInput.attributesManager.savePersistentAttributes();
+              })
+              .then(() => {
+                resolve(handlerInput.responseBuilder
+                .speak(speakText)
+                .withSimpleCard('yes', "yes")
+                .withShouldEndSession(true)
+                .getResponse());
+              })
+              .catch((error) => {
+                reject(error);
+              });
+          });
+    }
+}
+
+const NoIntentHandler = {
+    canHandle(handlerInput) {
+        return new Promise((resolve, reject) => {
+            handlerInput.attributesManager.getPersistentAttributes()
+            .then((attributes) => {
+                resolve( ( handlerInput.requestEnvelope.request.type === 'IntentRequest'
+                || handlerInput.requestEnvelope.request.type === 'LaunchRequest' )
+                && handlerInput.requestEnvelope.request.intent.name === 'no'
+                && attributes.questionState === 1);
+            })
+            .catch((error) => {
+                reject(error);
+            });
+        });
+    },
+    handle(handlerInput) {
+        return new Promise((resolve, reject) => {
+            let speakText = "no";
+            handlerInput.attributesManager.getPersistentAttributes()
+              .then((attributes) => {
+                speakText = questionData.find(el => el['q-id'] === attributes.question)['q-text'];
+                attributes.questionState = 0;
+                attributes.question = "";
+                handlerInput.attributesManager.setPersistentAttributes(attributes);
+                return handlerInput.attributesManager.savePersistentAttributes();
+              })
+              .then(() => {
+                resolve(handlerInput.responseBuilder
+                .speak(speakText)
+                .withSimpleCard('no', "no")
                 .withShouldEndSession(true)
                 .getResponse());
               })
@@ -165,6 +253,8 @@ exports.handler = ask.SkillBuilders.custom().withPersistenceAdapter(dynamoDbPers
     .addRequestHandlers(
     LaunchRequestHandler,
     resetDBIntentHandler,
+    YesIntentHandler,
+    NoIntentHandler,
 // begin generated intents
 generated.noneIntentHandler,
 generated.gamesIntentHandler,
@@ -212,6 +302,12 @@ generated.pokemonIntentHandler,
 generated.ghostsIntentHandler,
 generated.goalsIntentHandler,
 generated.cageIntentHandler,
+generated.voicemailIntentHandler,
+generated.recipeIntentHandler,
+generated.mathIntentHandler,
+generated.bouncyIntentHandler,
+generated.voluptuousIntentHandler,
+generated.demureIntentHandler,
 //end generated intents
     HelpIntentHandler,
     CancelAndStopIntentHandler,
