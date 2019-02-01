@@ -14,10 +14,26 @@ const LaunchRequestHandler = {
       return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
-      const speechText = 'Hi, welcome to Heartlace, your virtual girlfriend!' + 
+      var speechText = 'Hi, welcome to Heartlace, your virtual girlfriend!' + 
       'Your friend Skullfire has instructed me to refer to you as "Darling".' +
-      'To talk to me, just suggest a topic. For example, you can say "Girlfriend"' +
-      'or "butts"!';
+      'To talk to me, just suggest a topic. For example, you can say ';
+	  
+	  const randomInt = Math.floor(Math.random() * 4);
+	  
+	  switch(randomInt){
+		  case 0:
+		    speechText +=  ' "Girlfriend", or, "Butts" ';
+			break;
+		  case 1:
+		    speechText +=  ' "pets", or, "news" ';
+			break;
+		  case 2:
+		    speechText +=  ' "ghosts", or, "anime" ';
+			break;
+		  case 3:
+		    speechText +=  ' "flirt", or, "fursona" ';
+			break;
+	  }
   
       return new Promise((resolve, reject) => {
         handlerInput.attributesManager.getPersistentAttributes()
