@@ -16,8 +16,8 @@ const LaunchRequestHandler = {
     handle(handlerInput) {
       const speechText = 'Hi, welcome to Heartlace, your virtual girlfriend!' + 
       'Your friend Skullfire has instructed me to refer to you as "Darling".' +
-      'To talk to me, just suggest a topic. For example, you can say "Alexa,' +
-      ' ask heartlace girlfriend", or "Alexa, ask heartlace butts"!';
+      'To talk to me, just suggest a topic. For example, you can say "Girlfriend"' +
+      'or "butts"!';
   
       return new Promise((resolve, reject) => {
         handlerInput.attributesManager.getPersistentAttributes()
