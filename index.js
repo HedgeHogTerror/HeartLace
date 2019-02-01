@@ -69,8 +69,25 @@ const FallbackIntentHandler = {
         && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.FallbackIntent';
     },
     handle(handlerInput) {
-        const speechText = 'This is the fallback intent';
+        var speechText = 'Dont leave me hanging, darling! You can say ';
 
+  	  const randomInt = Math.floor(Math.random() * 4);
+	  
+	  switch(randomInt){
+		  case 0:
+		    speechText +=  ' "magic", or, "love" ';
+			break;
+		  case 1:
+		    speechText +=  ' "interests", or, "travel" ';
+			break;
+		  case 2:
+		    speechText +=  ' "age", or, "milkshake" ';
+			break;
+		  case 3:
+		    speechText +=  ' "goals", or, "cage" ';
+			break;
+	  }
+		
         return handlerInput.responseBuilder
         .speak(speechText)
         .reprompt(speechText)
@@ -85,8 +102,25 @@ const HelpIntentHandler = {
         && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-        const speechText = 'You can say hello to me!';
+        var speechText = 'Help, huh? Do you need some help, darling? You can say ';
 
+		  	  const randomInt = Math.floor(Math.random() * 4);
+	  
+	  switch(randomInt){
+		  case 0:
+		    speechText +=  ' "dinner", or, "language" ';
+			break;
+		  case 1:
+		    speechText +=  ' "order", or, "games" ';
+			break;
+		  case 2:
+		    speechText +=  ' "lies", or, "burglar" ';
+			break;
+		  case 3:
+		    speechText +=  ' "dad", or, "sassy" ';
+			break;
+	  }
+		
         return handlerInput.responseBuilder
         .speak(speechText)
         .reprompt(speechText)
@@ -102,7 +136,7 @@ const CancelAndStopIntentHandler = {
             || handlerInput.requestEnvelope.request.intent.name === 'AMAZON.StopIntent');
     },
     handle(handlerInput) {
-        const speechText = 'Goodbye!';
+        const speechText = 'I will be sad to see you go, Darling. If you want to talk again, just say, Alexa Ask Heartlace! Goodbye! Come back soon, Darling!';
 
         return handlerInput.responseBuilder
         .speak(speechText)
@@ -129,8 +163,8 @@ const ErrorHandler = {
         console.log(`Error handled: ${error.message}`);
 
         return handlerInput.responseBuilder
-        .speak('Sorry, I can\'t understand the command. Please say again.')
-        .reprompt('Sorry, I can\'t understand the command. Please say again.')
+        .speak('Sorry, Darling, I didn\'t quite understand that. Come again? Use simple single words to suggest topics.')
+        .reprompt('I missed that, Darling. Use simple single words like, magic, or, news.')
         .getResponse();
     },
 };
