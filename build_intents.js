@@ -21,11 +21,20 @@ data.filter(el => el.iteration === 0).forEach( (element,index) => {
         //"\n"+
     console.log(
         "// This is generated from build_intents.js\n " +
-        "exports." + element.topic +"IntentHandler = {\n" +
+        "exports." + element.topic + "IntentHandler = {\n" +
 
-        "   canHandle(handlerInput) { return (handlerInput.requestEnvelope.request.type === 'IntentRequest'\n" +
-        "       || handlerInput.requestEnvelope.request.type === 'LaunchRequest')\n" +
-        "       && handlerInput.requestEnvelope.request.intent.name === '"+ element.topic +"'; \n" +
+        "   canHandle(handlerInput) { return new Promise((resolve, reject) => {\n" +
+        "       handlerInput.attributesManager.getPersistentAttributes()\n" +
+        "           .then((attributes) => {\n" +
+        "               resolve( ( handlerInput.requestEnvelope.request.type === 'IntentRequest'\n" +
+        "               || handlerInput.requestEnvelope.request.type === 'LaunchRequest')\n" +
+        "               && handlerInput.requestEnvelope.request.intent.name === '"+ element.topic +"' \n" +
+        "               && attributes.questionState === 0);\n" +
+        "           })\n" +
+        "           .catch( error => {\n" +
+        "               reject(error);\n" +
+        "           });\n" +
+        "       });\n" +
         "   },\n" +
         "   handle(handlerInput){\n" +
         "       let speechText = \""+ element.StageZerotext +"\" \n" +

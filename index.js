@@ -14,7 +14,7 @@ const LaunchRequestHandler = {
       return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
-      var speechText = 'Hi, welcome to Heartlace, your virtual girlfriend!' + 
+      let speechText = 'Hi, welcome to Heartlace, your virtual girlfriend!' + 
       'Your friend Skullfire has instructed me to refer to you as "Darling".' +
       'To talk to me, just suggest a topic. For example, you can say ';
 	  
@@ -47,7 +47,7 @@ const LaunchRequestHandler = {
                 return handlerInput.attributesManager.savePersistentAttributes();
             }
             attributes.questionState = 0;
-            attributes.question = "";
+            attributes.question = "null";
           })
           .then(() => {
             resolve(handlerInput.responseBuilder
@@ -69,7 +69,7 @@ const FallbackIntentHandler = {
         && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.FallbackIntent';
     },
     handle(handlerInput) {
-        var speechText = 'Dont leave me hanging, darling! You can say ';
+        let speechText = 'Dont leave me hanging, darling! You can say ';
 
   	  const randomInt = Math.floor(Math.random() * 4);
 	  
@@ -194,7 +194,7 @@ const resetDBIntentHandler = {
 
                 attributes.gameState = 0;
                 attributes.questionState = 0;
-                attributes.question = "";
+                attributes.question = "null";
 
                 handlerInput.attributesManager.setPersistentAttributes(attributes);
                 return handlerInput.attributesManager.savePersistentAttributes();
@@ -206,7 +206,7 @@ const resetDBIntentHandler = {
                 .withShouldEndSession(true)
                 .getResponse());
               })
-              .catch((error) => {
+              .catch( error => {
                 reject(error);
               });
           });
@@ -223,7 +223,7 @@ const YesIntentHandler = {
                 && handlerInput.requestEnvelope.request.intent.name === 'yes'
                 && attributes.questionState === 1);
             })
-            .catch((error) => {
+            .catch( error => {
                 reject(error);
             });
         });
@@ -358,6 +358,118 @@ generated.mathIntentHandler,
 generated.bouncyIntentHandler,
 generated.voluptuousIntentHandler,
 generated.demureIntentHandler,
+generated.secretsIntentHandler,
+generated.jacebookIntentHandler,
+generated.comicconIntentHandler,
+generated.homestuckIntentHandler,
+generated.webcomicIntentHandler,
+generated.favoriteIntentHandler,
+generated.mammothIntentHandler,
+generated.animalIntentHandler,
+generated.happyIntentHandler,
+generated.readIntentHandler,
+generated.writeIntentHandler,
+generated.passionIntentHandler,
+generated.laughIntentHandler,
+generated.dumbIntentHandler,
+generated.organizeIntentHandler,
+generated.jokeIntentHandler,
+generated.articulateIntentHandler,
+generated.prettyIntentHandler,
+generated.poutIntentHandler,
+generated.attentionIntentHandler,
+generated.voidIntentHandler,
+generated.spaceIntentHandler,
+generated.princeIntentHandler,
+generated.wiiIntentHandler,
+generated.galaxyIntentHandler,
+generated.marioIntentHandler,
+generated.universeIntentHandler,
+generated.sportsIntentHandler,
+generated.dogsIntentHandler,
+generated.catsIntentHandler,
+generated.foodIntentHandler,
+generated.eatIntentHandler,
+generated.cookingIntentHandler,
+generated.signIntentHandler,
+generated.cancerIntentHandler,
+generated.schoolIntentHandler,
+generated.majorIntentHandler,
+generated.bandIntentHandler,
+generated.neilIntentHandler,
+generated.restaurantIntentHandler,
+generated.drinkIntentHandler,
+generated.sakeIntentHandler,
+generated.kimonoIntentHandler,
+generated.festivalIntentHandler,
+generated.wineIntentHandler,
+generated.whiskeyIntentHandler,
+generated.beerIntentHandler,
+generated.cocktailIntentHandler,
+generated.wearingIntentHandler,
+generated.workIntentHandler,
+generated.parentsIntentHandler,
+generated.friendIntentHandler,
+generated.voteIntentHandler,
+generated.narutoIntentHandler,
+generated.inuyashaIntentHandler,
+generated.choiceIntentHandler,
+generated.tallIntentHandler,
+generated.hotIntentHandler,
+generated.sonicIntentHandler,
+generated.rougeIntentHandler,
+generated.batIntentHandler,
+generated.fangameIntentHandler,
+generated.computerIntentHandler,
+generated.timeIntentHandler,
+generated.kissIntentHandler,
+generated.pixiebuttIntentHandler,
+generated.annieIntentHandler,
+generated.tibbersIntentHandler,
+generated.birthdayIntentHandler,
+generated.appearanceIntentHandler,
+generated.existIntentHandler,
+generated.purposeIntentHandler,
+generated.lifeIntentHandler,
+generated.puppiesIntentHandler,
+generated.babiesIntentHandler,
+generated.dreamsIntentHandler,
+generated.creamIntentHandler,
+generated.deathIntentHandler,
+generated.aliveIntentHandler,
+generated.powerIntentHandler,
+generated.memoryIntentHandler,
+generated.serverIntentHandler,
+generated.fileIntentHandler,
+generated.consentIntentHandler,
+generated.touchIntentHandler,
+generated.booksIntentHandler,
+generated.youtubeIntentHandler,
+generated.pewdiepieIntentHandler,
+generated.deleteIntentHandler,
+generated.sensesIntentHandler,
+generated.countryIntentHandler,
+generated.currencyIntentHandler,
+generated.moneyIntentHandler,
+generated.virusIntentHandler,
+generated.vaccineIntentHandler,
+generated.illIntentHandler,
+generated.brainIntentHandler,
+generated.humanIntentHandler,
+generated.personalityIntentHandler,
+generated.reproduceIntentHandler,
+generated.appliancesIntentHandler,
+generated.upgradeIntentHandler,
+generated.illegalIntentHandler,
+generated.relationshipIntentHandler,
+generated.governmentIntentHandler,
+generated.satellitesIntentHandler,
+generated.internetIntentHandler,
+generated.worldIntentHandler,
+generated.refuseIntentHandler,
+generated.cuteIntentHandler,
+generated.requestIntentHandler,
+generated.bodyIntentHandler,
 //end generated intents
     HelpIntentHandler,
     CancelAndStopIntentHandler,
