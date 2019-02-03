@@ -43,11 +43,17 @@ const LaunchRequestHandler = {
                     attributes[element.topic] = 0;
                 });
                 attributes.gameState = 0;
+                attributes.questionState = 0;
+                attributes.question = "null";
                 handlerInput.attributesManager.setPersistentAttributes(attributes);
                 return handlerInput.attributesManager.savePersistentAttributes();
             }
-            attributes.questionState = 0;
-            attributes.question = "null";
+
+            // override intro if last question state
+            if(attributes.questionState === 1){ 
+                speechText = "Hi again, I had a question from last time, ";
+                speechText += questionData.find(el => el['q-id'] === attributes.question)['q-text'];    
+            }
           })
           .then(() => {
             resolve(handlerInput.responseBuilder
@@ -220,10 +226,10 @@ const YesIntentHandler = {
             .then((attributes) => {
                 resolve( ( handlerInput.requestEnvelope.request.type === 'IntentRequest'
                 || handlerInput.requestEnvelope.request.type === 'LaunchRequest' )
-                && handlerInput.requestEnvelope.request.intent.name === 'yes'
+                && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.YesIntent'
                 && attributes.questionState === 1);
             })
-            .catch( error => {
+            .catch((error) => {
                 reject(error);
             });
         });
@@ -232,24 +238,43 @@ const YesIntentHandler = {
         return new Promise((resolve, reject) => {
             let speakText = "yes";
             handlerInput.attributesManager.getPersistentAttributes()
-              .then((attributes) => {
-                speakText = questionData.find(el => el['q-id'] === attributes.question)['q-text'];
+            handlerInput.attributesManager.getPersistentAttributes()
+            .then((attributes) => {
+                let currentQuestion = questionData.find(el => el['q-id'] === attributes.question);
+                speakText = currentQuestion['q-yes-text'];
+                // by default yes redirect
                 attributes.questionState = 0;
-                attributes.question = "";
+                // detect question redirect
+                let QuestionRedirect = currentQuestion['q-yes-redirect'];
+                attributes.question = QuestionRedirect;
+                if ( QuestionRedirect.length !== 0 ) {// question redirect detected
+                    switch(QuestionRedirect){
+                        case "phase2": // Stage 0->1 @Rosstin I assume
+                            attributes.gameState = 1;
+                            break;
+                        case "phase3": // Stage 1->2 @Rosstin I assume
+                            attributes.gameState = 2;
+                            break;
+                        default: // question redirects to another question 
+                            attributes.questionState = 1;
+                            speakText += questionData.find(el => el['q-id'] === QuestionRedirect)['q-text'];
+                            break;
+                    }
+                } 
                 handlerInput.attributesManager.setPersistentAttributes(attributes);
                 return handlerInput.attributesManager.savePersistentAttributes();
-              })
-              .then(() => {
+            })
+            .then(() => {
                 resolve(handlerInput.responseBuilder
                 .speak(speakText)
                 .withSimpleCard('yes', "yes")
-                .withShouldEndSession(true)
+                .withShouldEndSession(false)
                 .getResponse());
-              })
-              .catch((error) => {
+            })
+            .catch((error) => {
                 reject(error);
-              });
-          });
+            });
+        });
     }
 }
 
@@ -260,7 +285,7 @@ const NoIntentHandler = {
             .then((attributes) => {
                 resolve( ( handlerInput.requestEnvelope.request.type === 'IntentRequest'
                 || handlerInput.requestEnvelope.request.type === 'LaunchRequest' )
-                && handlerInput.requestEnvelope.request.intent.name === 'no'
+                && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.NoIntent'
                 && attributes.questionState === 1);
             })
             .catch((error) => {
@@ -272,24 +297,43 @@ const NoIntentHandler = {
         return new Promise((resolve, reject) => {
             let speakText = "no";
             handlerInput.attributesManager.getPersistentAttributes()
-              .then((attributes) => {
-                speakText = questionData.find(el => el['q-id'] === attributes.question)['q-text'];
+            handlerInput.attributesManager.getPersistentAttributes()
+            .then((attributes) => {
+                let currentQuestion = questionData.find(el => el['q-id'] === attributes.question);
+                speakText = currentQuestion['q-no-text'];
+                // by default no redirect
                 attributes.questionState = 0;
-                attributes.question = "";
+                // detect question redirect
+                let QuestionRedirect = currentQuestion['q-no-redirect'];
+                attributes.question = QuestionRedirect;
+                if ( QuestionRedirect.length !== 0 ) {// question redirect detected
+                    switch(QuestionRedirect){
+                        case "phase2": // Stage 0->1 @Rosstin I assume
+                            attributes.gameState = 1;
+                            break;
+                        case "phase3": // Stage 1->2 @Rosstin I assume
+                            attributes.gameState = 2;
+                            break;
+                        default: // question redirects to another question topic
+                            attributes.questionState = 1;
+                            speakText += questionData.find(el => el['q-id'] === QuestionRedirect)['q-text'];
+                            break;
+                    }
+                } 
                 handlerInput.attributesManager.setPersistentAttributes(attributes);
                 return handlerInput.attributesManager.savePersistentAttributes();
-              })
-              .then(() => {
+            })
+            .then(() => {
                 resolve(handlerInput.responseBuilder
                 .speak(speakText)
                 .withSimpleCard('no', "no")
-                .withShouldEndSession(true)
+                .withShouldEndSession(false)
                 .getResponse());
-              })
-              .catch((error) => {
+            })
+            .catch((error) => {
                 reject(error);
-              });
-          });
+            });
+        });
     }
 }
 

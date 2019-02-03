@@ -46,9 +46,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.none < (topic.length-1)){ // set ++ if lower than max
                    attributes.none++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -108,9 +108,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.games < (topic.length-1)){ // set ++ if lower than max
                    attributes.games++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -170,9 +170,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.magic < (topic.length-1)){ // set ++ if lower than max
                    attributes.magic++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -232,9 +232,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.anime < (topic.length-1)){ // set ++ if lower than max
                    attributes.anime++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -294,9 +294,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.dad < (topic.length-1)){ // set ++ if lower than max
                    attributes.dad++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -356,9 +356,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.Skullfire < (topic.length-1)){ // set ++ if lower than max
                    attributes.Skullfire++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -418,9 +418,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.love < (topic.length-1)){ // set ++ if lower than max
                    attributes.love++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -480,9 +480,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.girlfriend < (topic.length-1)){ // set ++ if lower than max
                    attributes.girlfriend++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -542,9 +542,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.family < (topic.length-1)){ // set ++ if lower than max
                    attributes.family++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -604,9 +604,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.interests < (topic.length-1)){ // set ++ if lower than max
                    attributes.interests++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -666,9 +666,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.travel < (topic.length-1)){ // set ++ if lower than max
                    attributes.travel++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -728,9 +728,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.age < (topic.length-1)){ // set ++ if lower than max
                    attributes.age++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -790,9 +790,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.sex < (topic.length-1)){ // set ++ if lower than max
                    attributes.sex++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -852,9 +852,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.language < (topic.length-1)){ // set ++ if lower than max
                    attributes.language++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -914,9 +914,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.order < (topic.length-1)){ // set ++ if lower than max
                    attributes.order++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -976,9 +976,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.butts < (topic.length-1)){ // set ++ if lower than max
                    attributes.butts++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1038,9 +1038,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.sassy < (topic.length-1)){ // set ++ if lower than max
                    attributes.sassy++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1100,9 +1100,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.pert < (topic.length-1)){ // set ++ if lower than max
                    attributes.pert++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1162,9 +1162,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.bubble < (topic.length-1)){ // set ++ if lower than max
                    attributes.bubble++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1224,9 +1224,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.unique < (topic.length-1)){ // set ++ if lower than max
                    attributes.unique++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1286,9 +1286,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.pets < (topic.length-1)){ // set ++ if lower than max
                    attributes.pets++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1348,9 +1348,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.permissions < (topic.length-1)){ // set ++ if lower than max
                    attributes.permissions++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1410,9 +1410,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.pokeball < (topic.length-1)){ // set ++ if lower than max
                    attributes.pokeball++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1472,9 +1472,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.music < (topic.length-1)){ // set ++ if lower than max
                    attributes.music++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1534,9 +1534,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.cough < (topic.length-1)){ // set ++ if lower than max
                    attributes.cough++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1596,9 +1596,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.darling < (topic.length-1)){ // set ++ if lower than max
                    attributes.darling++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1658,9 +1658,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.password < (topic.length-1)){ // set ++ if lower than max
                    attributes.password++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1720,9 +1720,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.revoke < (topic.length-1)){ // set ++ if lower than max
                    attributes.revoke++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1782,9 +1782,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.chewbacca < (topic.length-1)){ // set ++ if lower than max
                    attributes.chewbacca++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1844,9 +1844,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.handsolo < (topic.length-1)){ // set ++ if lower than max
                    attributes.handsolo++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1906,9 +1906,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.jarjar < (topic.length-1)){ // set ++ if lower than max
                    attributes.jarjar++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -1968,9 +1968,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.flirt < (topic.length-1)){ // set ++ if lower than max
                    attributes.flirt++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2030,9 +2030,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.zenden < (topic.length-1)){ // set ++ if lower than max
                    attributes.zenden++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2092,9 +2092,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.takation < (topic.length-1)){ // set ++ if lower than max
                    attributes.takation++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2154,9 +2154,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.burglar < (topic.length-1)){ // set ++ if lower than max
                    attributes.burglar++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2216,9 +2216,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.milkshake < (topic.length-1)){ // set ++ if lower than max
                    attributes.milkshake++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2278,9 +2278,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.lies < (topic.length-1)){ // set ++ if lower than max
                    attributes.lies++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2340,9 +2340,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.news < (topic.length-1)){ // set ++ if lower than max
                    attributes.news++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2402,9 +2402,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.fursona < (topic.length-1)){ // set ++ if lower than max
                    attributes.fursona++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2464,9 +2464,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.cosplay < (topic.length-1)){ // set ++ if lower than max
                    attributes.cosplay++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2526,9 +2526,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.pictures < (topic.length-1)){ // set ++ if lower than max
                    attributes.pictures++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2588,9 +2588,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.dinner < (topic.length-1)){ // set ++ if lower than max
                    attributes.dinner++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2650,9 +2650,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.pokemon < (topic.length-1)){ // set ++ if lower than max
                    attributes.pokemon++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2712,9 +2712,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.ghosts < (topic.length-1)){ // set ++ if lower than max
                    attributes.ghosts++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2774,9 +2774,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.goals < (topic.length-1)){ // set ++ if lower than max
                    attributes.goals++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2836,9 +2836,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.cage < (topic.length-1)){ // set ++ if lower than max
                    attributes.cage++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2898,9 +2898,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.voicemail < (topic.length-1)){ // set ++ if lower than max
                    attributes.voicemail++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -2960,9 +2960,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.recipe < (topic.length-1)){ // set ++ if lower than max
                    attributes.recipe++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3022,9 +3022,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.math < (topic.length-1)){ // set ++ if lower than max
                    attributes.math++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3084,9 +3084,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.bouncy < (topic.length-1)){ // set ++ if lower than max
                    attributes.bouncy++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3146,9 +3146,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.voluptuous < (topic.length-1)){ // set ++ if lower than max
                    attributes.voluptuous++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3208,9 +3208,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.demure < (topic.length-1)){ // set ++ if lower than max
                    attributes.demure++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3270,9 +3270,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.secrets < (topic.length-1)){ // set ++ if lower than max
                    attributes.secrets++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3332,9 +3332,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.jacebook < (topic.length-1)){ // set ++ if lower than max
                    attributes.jacebook++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3394,9 +3394,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.comiccon < (topic.length-1)){ // set ++ if lower than max
                    attributes.comiccon++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3456,9 +3456,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.homestuck < (topic.length-1)){ // set ++ if lower than max
                    attributes.homestuck++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3518,9 +3518,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.webcomic < (topic.length-1)){ // set ++ if lower than max
                    attributes.webcomic++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3580,9 +3580,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.favorite < (topic.length-1)){ // set ++ if lower than max
                    attributes.favorite++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3642,9 +3642,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.mammoth < (topic.length-1)){ // set ++ if lower than max
                    attributes.mammoth++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3704,9 +3704,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.animal < (topic.length-1)){ // set ++ if lower than max
                    attributes.animal++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3766,9 +3766,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.happy < (topic.length-1)){ // set ++ if lower than max
                    attributes.happy++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3828,9 +3828,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.read < (topic.length-1)){ // set ++ if lower than max
                    attributes.read++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3890,9 +3890,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.write < (topic.length-1)){ // set ++ if lower than max
                    attributes.write++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -3952,9 +3952,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.passion < (topic.length-1)){ // set ++ if lower than max
                    attributes.passion++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4014,9 +4014,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.laugh < (topic.length-1)){ // set ++ if lower than max
                    attributes.laugh++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4076,9 +4076,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.dumb < (topic.length-1)){ // set ++ if lower than max
                    attributes.dumb++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4138,9 +4138,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.organize < (topic.length-1)){ // set ++ if lower than max
                    attributes.organize++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4200,9 +4200,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.joke < (topic.length-1)){ // set ++ if lower than max
                    attributes.joke++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4262,9 +4262,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.articulate < (topic.length-1)){ // set ++ if lower than max
                    attributes.articulate++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4324,9 +4324,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.pretty < (topic.length-1)){ // set ++ if lower than max
                    attributes.pretty++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4386,9 +4386,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.pout < (topic.length-1)){ // set ++ if lower than max
                    attributes.pout++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4448,9 +4448,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.attention < (topic.length-1)){ // set ++ if lower than max
                    attributes.attention++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4510,9 +4510,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.void < (topic.length-1)){ // set ++ if lower than max
                    attributes.void++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4572,9 +4572,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.space < (topic.length-1)){ // set ++ if lower than max
                    attributes.space++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4634,9 +4634,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.prince < (topic.length-1)){ // set ++ if lower than max
                    attributes.prince++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4696,9 +4696,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.wii < (topic.length-1)){ // set ++ if lower than max
                    attributes.wii++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4758,9 +4758,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.galaxy < (topic.length-1)){ // set ++ if lower than max
                    attributes.galaxy++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4820,9 +4820,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.mario < (topic.length-1)){ // set ++ if lower than max
                    attributes.mario++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4882,9 +4882,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.universe < (topic.length-1)){ // set ++ if lower than max
                    attributes.universe++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -4944,9 +4944,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.sports < (topic.length-1)){ // set ++ if lower than max
                    attributes.sports++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5006,9 +5006,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.dogs < (topic.length-1)){ // set ++ if lower than max
                    attributes.dogs++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5068,9 +5068,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.cats < (topic.length-1)){ // set ++ if lower than max
                    attributes.cats++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5130,9 +5130,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.food < (topic.length-1)){ // set ++ if lower than max
                    attributes.food++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5192,9 +5192,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.eat < (topic.length-1)){ // set ++ if lower than max
                    attributes.eat++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5254,9 +5254,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.cooking < (topic.length-1)){ // set ++ if lower than max
                    attributes.cooking++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5316,9 +5316,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.sign < (topic.length-1)){ // set ++ if lower than max
                    attributes.sign++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5378,9 +5378,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.cancer < (topic.length-1)){ // set ++ if lower than max
                    attributes.cancer++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5440,9 +5440,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.school < (topic.length-1)){ // set ++ if lower than max
                    attributes.school++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5502,9 +5502,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.major < (topic.length-1)){ // set ++ if lower than max
                    attributes.major++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5564,9 +5564,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.band < (topic.length-1)){ // set ++ if lower than max
                    attributes.band++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5626,9 +5626,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.neil < (topic.length-1)){ // set ++ if lower than max
                    attributes.neil++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5688,9 +5688,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.restaurant < (topic.length-1)){ // set ++ if lower than max
                    attributes.restaurant++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5750,9 +5750,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.drink < (topic.length-1)){ // set ++ if lower than max
                    attributes.drink++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5812,9 +5812,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.sake < (topic.length-1)){ // set ++ if lower than max
                    attributes.sake++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5874,9 +5874,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.kimono < (topic.length-1)){ // set ++ if lower than max
                    attributes.kimono++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5936,9 +5936,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.festival < (topic.length-1)){ // set ++ if lower than max
                    attributes.festival++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -5998,9 +5998,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.wine < (topic.length-1)){ // set ++ if lower than max
                    attributes.wine++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6060,9 +6060,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.whiskey < (topic.length-1)){ // set ++ if lower than max
                    attributes.whiskey++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6122,9 +6122,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.beer < (topic.length-1)){ // set ++ if lower than max
                    attributes.beer++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6184,9 +6184,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.cocktail < (topic.length-1)){ // set ++ if lower than max
                    attributes.cocktail++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6246,9 +6246,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.wearing < (topic.length-1)){ // set ++ if lower than max
                    attributes.wearing++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6308,9 +6308,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.work < (topic.length-1)){ // set ++ if lower than max
                    attributes.work++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6370,9 +6370,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.parents < (topic.length-1)){ // set ++ if lower than max
                    attributes.parents++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6432,9 +6432,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.friend < (topic.length-1)){ // set ++ if lower than max
                    attributes.friend++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6494,9 +6494,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.vote < (topic.length-1)){ // set ++ if lower than max
                    attributes.vote++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6556,9 +6556,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.naruto < (topic.length-1)){ // set ++ if lower than max
                    attributes.naruto++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6618,9 +6618,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.inuyasha < (topic.length-1)){ // set ++ if lower than max
                    attributes.inuyasha++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6680,9 +6680,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.choice < (topic.length-1)){ // set ++ if lower than max
                    attributes.choice++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6742,9 +6742,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.tall < (topic.length-1)){ // set ++ if lower than max
                    attributes.tall++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6804,9 +6804,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.hot < (topic.length-1)){ // set ++ if lower than max
                    attributes.hot++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6866,9 +6866,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.sonic < (topic.length-1)){ // set ++ if lower than max
                    attributes.sonic++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6928,9 +6928,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.rouge < (topic.length-1)){ // set ++ if lower than max
                    attributes.rouge++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -6990,9 +6990,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.bat < (topic.length-1)){ // set ++ if lower than max
                    attributes.bat++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7052,9 +7052,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.fangame < (topic.length-1)){ // set ++ if lower than max
                    attributes.fangame++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7114,9 +7114,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.computer < (topic.length-1)){ // set ++ if lower than max
                    attributes.computer++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7176,9 +7176,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.time < (topic.length-1)){ // set ++ if lower than max
                    attributes.time++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7238,9 +7238,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.kiss < (topic.length-1)){ // set ++ if lower than max
                    attributes.kiss++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7300,9 +7300,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.pixiebutt < (topic.length-1)){ // set ++ if lower than max
                    attributes.pixiebutt++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7362,9 +7362,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.annie < (topic.length-1)){ // set ++ if lower than max
                    attributes.annie++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7424,9 +7424,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.tibbers < (topic.length-1)){ // set ++ if lower than max
                    attributes.tibbers++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7486,9 +7486,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.birthday < (topic.length-1)){ // set ++ if lower than max
                    attributes.birthday++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7548,9 +7548,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.appearance < (topic.length-1)){ // set ++ if lower than max
                    attributes.appearance++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7610,9 +7610,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.exist < (topic.length-1)){ // set ++ if lower than max
                    attributes.exist++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7672,9 +7672,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.purpose < (topic.length-1)){ // set ++ if lower than max
                    attributes.purpose++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7734,9 +7734,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.life < (topic.length-1)){ // set ++ if lower than max
                    attributes.life++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7796,9 +7796,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.puppies < (topic.length-1)){ // set ++ if lower than max
                    attributes.puppies++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7858,9 +7858,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.babies < (topic.length-1)){ // set ++ if lower than max
                    attributes.babies++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7920,9 +7920,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.dreams < (topic.length-1)){ // set ++ if lower than max
                    attributes.dreams++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -7982,9 +7982,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.cream < (topic.length-1)){ // set ++ if lower than max
                    attributes.cream++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8044,9 +8044,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.death < (topic.length-1)){ // set ++ if lower than max
                    attributes.death++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8106,9 +8106,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.alive < (topic.length-1)){ // set ++ if lower than max
                    attributes.alive++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8168,9 +8168,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.power < (topic.length-1)){ // set ++ if lower than max
                    attributes.power++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8230,9 +8230,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.memory < (topic.length-1)){ // set ++ if lower than max
                    attributes.memory++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8292,9 +8292,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.server < (topic.length-1)){ // set ++ if lower than max
                    attributes.server++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8354,9 +8354,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.file < (topic.length-1)){ // set ++ if lower than max
                    attributes.file++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8416,9 +8416,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.consent < (topic.length-1)){ // set ++ if lower than max
                    attributes.consent++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8478,9 +8478,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.touch < (topic.length-1)){ // set ++ if lower than max
                    attributes.touch++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8540,9 +8540,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.books < (topic.length-1)){ // set ++ if lower than max
                    attributes.books++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8602,9 +8602,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.youtube < (topic.length-1)){ // set ++ if lower than max
                    attributes.youtube++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8664,9 +8664,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.pewdiepie < (topic.length-1)){ // set ++ if lower than max
                    attributes.pewdiepie++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8726,9 +8726,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.delete < (topic.length-1)){ // set ++ if lower than max
                    attributes.delete++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8788,9 +8788,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.senses < (topic.length-1)){ // set ++ if lower than max
                    attributes.senses++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8850,9 +8850,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.country < (topic.length-1)){ // set ++ if lower than max
                    attributes.country++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8912,9 +8912,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.currency < (topic.length-1)){ // set ++ if lower than max
                    attributes.currency++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -8974,9 +8974,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.money < (topic.length-1)){ // set ++ if lower than max
                    attributes.money++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9036,9 +9036,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.virus < (topic.length-1)){ // set ++ if lower than max
                    attributes.virus++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9098,9 +9098,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.vaccine < (topic.length-1)){ // set ++ if lower than max
                    attributes.vaccine++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9160,9 +9160,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.ill < (topic.length-1)){ // set ++ if lower than max
                    attributes.ill++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9222,9 +9222,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.brain < (topic.length-1)){ // set ++ if lower than max
                    attributes.brain++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9284,9 +9284,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.human < (topic.length-1)){ // set ++ if lower than max
                    attributes.human++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9346,9 +9346,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.personality < (topic.length-1)){ // set ++ if lower than max
                    attributes.personality++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9408,9 +9408,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.reproduce < (topic.length-1)){ // set ++ if lower than max
                    attributes.reproduce++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9470,9 +9470,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.appliances < (topic.length-1)){ // set ++ if lower than max
                    attributes.appliances++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9532,9 +9532,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.upgrade < (topic.length-1)){ // set ++ if lower than max
                    attributes.upgrade++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9594,9 +9594,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.illegal < (topic.length-1)){ // set ++ if lower than max
                    attributes.illegal++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9656,9 +9656,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.relationship < (topic.length-1)){ // set ++ if lower than max
                    attributes.relationship++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9718,9 +9718,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.government < (topic.length-1)){ // set ++ if lower than max
                    attributes.government++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9780,9 +9780,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.satellites < (topic.length-1)){ // set ++ if lower than max
                    attributes.satellites++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9842,9 +9842,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.internet < (topic.length-1)){ // set ++ if lower than max
                    attributes.internet++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9904,9 +9904,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.world < (topic.length-1)){ // set ++ if lower than max
                    attributes.world++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -9966,9 +9966,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.refuse < (topic.length-1)){ // set ++ if lower than max
                    attributes.refuse++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -10028,9 +10028,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.cute < (topic.length-1)){ // set ++ if lower than max
                    attributes.cute++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -10090,9 +10090,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.request < (topic.length-1)){ // set ++ if lower than max
                    attributes.request++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {
@@ -10152,9 +10152,9 @@ const questionData = require('./data_Questions.json');
                }
                if ( attributes.body < (topic.length-1)){ // set ++ if lower than max
                    attributes.body++;
-                   handlerInput.attributesManager.setPersistentAttributes(attributes);
-                   return handlerInput.attributesManager.savePersistentAttributes();
-               } else return true;
+               }
+               handlerInput.attributesManager.setPersistentAttributes(attributes);
+               return handlerInput.attributesManager.savePersistentAttributes();
 
            })
            .then(() => {

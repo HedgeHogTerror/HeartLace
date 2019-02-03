@@ -65,9 +65,9 @@ data.filter(el => el.iteration === 0).forEach( (element,index) => {
         "               }\n" +
         "               if ( attributes."+ element.topic +" < (topic.length-1)){ // set ++ if lower than max\n" +
         "                   attributes."+ element.topic +"++;\n" +
-        "                   handlerInput.attributesManager.setPersistentAttributes(attributes);\n" +
-        "                   return handlerInput.attributesManager.savePersistentAttributes();\n" +
-        "               } else return true;\n" +
+        "               }\n" +
+        "               handlerInput.attributesManager.setPersistentAttributes(attributes);\n" +
+        "               return handlerInput.attributesManager.savePersistentAttributes();\n" +
         "\n" +
         "           })\n" +
         "           .then(() => {\n" +
